@@ -34,7 +34,7 @@ Aplicação web para visualização de informações de jogadores de Genshin Imp
 
 1. **Clone o repositório:**
 ```bash
-git clone https://github.com/seu-usuario/genshin-codex.git
+https://github.com/lourencolia/genshin-codex.git
 cd genshin-codex
 ```
 
