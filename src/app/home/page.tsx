@@ -1,5 +1,6 @@
 "use client"
 
+import DashboardLayout from '../components/DashboardLayout'
 import styles from './home.module.css'
 
 export default function Home() {
@@ -31,32 +32,26 @@ export default function Home() {
     ]
 
     return (
-        <div className={styles.container}>
-            {/* Sidebar */}
-            <aside className={styles.sidebar}>
-                <div className={styles.logo}>Genshin Codex</div>
-                <nav>
-                    <ul className={styles.navMenu}>
-                        <li className={`${styles.navItem} ${styles.navItemActive}`}>🏠 Home</li>
-                        <li className={styles.navItem}>⚔️ Builds</li>
-                        <li className={styles.navItem}>⭐ Pity</li>
-                        <li className={styles.navItem}>⚙️ Configurações</li>
-                    </ul>
-                </nav>
-            </aside>
-
-            {/* Main Content */}
-            <main className={styles.mainContent}>
+        <DashboardLayout>
+            {/* background da tela home*/}
+            <div className={styles.homeWrapper}>
                 <div className={styles.header}>
                     <h1 className={styles.headerTitle}>Registro de Aventura</h1>
                     <p className={styles.headerSubtitle}>Bem-vindo de volta, {playerData.name}!</p>
                 </div>
 
-                {/* Profile Card */}
+                {/* card do perfil */}
                 <div className={styles.profileCard}>
                     <div className={styles.profileHeader}>
                         <div className={styles.avatarContainer}>
-                            <div className={styles.avatar} style={{ background: '#667eea', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '36px', color: 'white' }}>
+                            <div className={styles.avatar} style={{ 
+                                background: '#667eea', 
+                                display: 'flex', 
+                                alignItems: 'center', 
+                                justifyContent: 'center', 
+                                fontSize: '36px', 
+                                color: 'white' 
+                            }}>
                                 👤
                             </div>
                         </div>
@@ -80,7 +75,6 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Stats Grid */}
                 <div className={styles.statsGrid}>
                     <div className={styles.statCard}>
                         <div className={styles.statCardHeader}>
@@ -105,13 +99,20 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Featured Characters */}
+                {/* personagens amostra no perfil */}
                 <section className={styles.section}>
                     <h3 className={styles.sectionTitle}>Personagens em Destaque</h3>
                     <div className={styles.charactersGrid}>
                         {featuredCharacters.map((char, index) => (
                             <div key={index} className={styles.characterCard}>
-                                <div className={styles.characterAvatar} style={{ background: '#667eea', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '32px', color: 'white' }}>
+                                <div className={styles.characterAvatar} style={{ 
+                                    background: '#667eea', 
+                                    display: 'flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center', 
+                                    fontSize: '32px', 
+                                    color: 'white' 
+                                }}>
                                     ⚔️
                                 </div>
                                 <h4 className={styles.characterName}>{char.name}</h4>
@@ -120,7 +121,20 @@ export default function Home() {
                         ))}
                     </div>
                 </section>
-            </main>
-        </div>
+
+                {/* acesso rápido */}
+                <section className={styles.section}>
+                    <h3 className={styles.sectionTitle}>Acesso Rápido</h3>
+                    <div className={styles.quickAccessGrid}>
+                        {quickAccess.map((item, index) => (
+                            <div key={index} className={styles.quickAccessCard}>
+                                <div className={styles.quickAccessIcon}>{item.icon}</div>
+                                <p className={styles.quickAccessLabel}>{item.label}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            </div>
+        </DashboardLayout>
     )
 }

@@ -1,70 +1,12 @@
-.container {
+.homeWrapper {
     min-height: 100vh;
+    width: 100%;
+    padding: 40px;
     background: linear-gradient(135deg, rgba(26, 26, 46, 0.871) 20%, rgba(22, 33, 62, 0.486) 65%, rgba(15, 51, 96, 0.659) 100%), 
                 url('/silvermoon.jpg.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    display: flex;
-    position: relative;
-}
-
-/* Sidebar e MainContent já tem z-index para ficarem acima */
-
-.sidebar {
-    width: 280px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 32px 24px;
-    position: fixed;
-    height: 100vh;
-    overflow-y: auto;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 40px;
-}
-
-.navMenu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navItem {
-    padding: 14px 18px;
-    margin-bottom: 8px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
-    font-size: 15px;
-}
-
-.navItem:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    transform: translateX(4px);
-}
-
-.navItemActive {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-}
-
-.mainContent {
-    margin-left: 280px;
-    flex: 1;
-    padding: 40px;
 }
 
 .header {
@@ -86,6 +28,7 @@
     font-size: 18px;
 }
 
+/* Profile Card */
 .profileCard {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
@@ -179,6 +122,7 @@
     text-align: center;
 }
 
+/* Stats Grid */
 .statsGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -231,16 +175,16 @@
     margin: 0;
 }
 
+.section {
+    margin-bottom: 40px;
+}
+
 .sectionTitle {
     font-size: 24px;
     font-weight: 800;
     color: white;
     margin: 0 0 24px 0;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.section {
-    margin-bottom: 40px;
 }
 
 .charactersGrid {
@@ -291,6 +235,7 @@
     font-weight: 600;
 }
 
+/* Quick Access Grid */
 .quickAccessGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -328,15 +273,6 @@
 }
 
 @media (max-width: 1024px) {
-    .sidebar {
-        transform: translateX(-100%);
-        transition: transform 0.3s;
-    }
-
-    .mainContent {
-        margin-left: 0;
-    }
-
     .statsGrid {
         grid-template-columns: 1fr;
     }
@@ -352,7 +288,7 @@
 }
 
 @media (max-width: 768px) {
-    .mainContent {
+    .homeWrapper {
         padding: 24px;
     }
 
