@@ -44,8 +44,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# ===== ADIÇÕES IMPORTANTES PARA PROJETO PÚBLICO =====
-
 # IDEs e Editores
 .vscode/*
 !.vscode/extensions.json
@@ -142,4 +140,3 @@ prisma/*.db-journal
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
-# Descomente a linha acima APENAS se usar outro package manager
